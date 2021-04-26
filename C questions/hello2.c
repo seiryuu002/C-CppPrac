@@ -14,6 +14,6 @@ void main()
  scanf("%s",ans);
  printf("tell me your 12th percentage.");
  scanf("%f",per10);
- printf("tell me your  10th percentage")
+ printf("tell me your  10th percentage");
  scanf("%f",per12);
 }
