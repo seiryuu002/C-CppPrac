@@ -79,7 +79,7 @@ void SLL::insert_end(){
     cin>>newNode->data;
     newNode->next = NULL;
     if(head == NULL){
-        
+
         head = newNode;
     }
     else{
@@ -92,7 +92,7 @@ void SLL::insert_end(){
 }
 
 void SLL::insert_n(){
-    
+
     if(head == NULL){
         cout<<"The List Is Empty.\n";
         return;
@@ -106,7 +106,7 @@ void SLL::insert_n(){
     cout<<"Enter The Data : ";
     cin>>newNode->data;
     newNode->next = NULL;
-    
+
     if(pos == 1){
         newNode->next = head;
         head = newNode;
@@ -132,7 +132,7 @@ void SLL::insert_n(){
 }
 
 void SLL::delete_begg(){
-    
+
     if(head == NULL){
         cout<<"List Is Empty"<<endl;
         return;
@@ -149,21 +149,21 @@ void SLL::delete_end(){
         cout<<"List Is Empty"<<endl;
         return;
     }
-    
+
     Node* Last_node = head;
     Node* secondLast_node = head;
     while(Last_node->next != NULL){
         secondLast_node = Last_node;
         Last_node = Last_node->next;
-    } 
+    }
 
     if(secondLast_node == head)
-        head = NULL;        
+        head = NULL;
     else
         secondLast_node->next = NULL;
-    
+
     delete Last_node;
-}   
+}
 
 
 void SLL::delete_pos(){  //by given position
@@ -207,12 +207,12 @@ void SLL::delete_node(){ //by given data/key
         delete curr;
         return;
     }
-    
+
     while(curr != NULL && curr->data != key){
         prev = curr;
         curr = curr->next;
     }
-    
+
     if(curr == NULL) return;
 
     prev->next = curr->next;
@@ -220,18 +220,18 @@ void SLL::delete_node(){ //by given data/key
 }
 
 void SLL::reverse(){
-    Node* current = head; 
-    Node *prev = NULL, *next = NULL; 
-  
-    while (current != NULL) { 
-            // Store next 
-        next = current->next; 
-            // Reverse current node's pointer 
-        current->next = prev; 
-            // Move pointers one position ahead. 
-        prev = current; 
-        current = next; 
-    } 
+    Node* current = head;
+    Node *prev = NULL, *next = NULL;
+
+    while (current != NULL) {
+            // Store next
+        next = current->next;
+            // Reverse current node's pointer
+        current->next = prev;
+            // Move pointers one position ahead.
+        prev = current;
+        current = next;
+    }
     head = prev;
 }
 
@@ -291,7 +291,7 @@ int main(){
                 obj.reverse();
                 obj.display();
             break;
-            
+
             case 9:
                 t = 0;
             break;
