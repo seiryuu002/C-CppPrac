@@ -3,7 +3,7 @@
 int cash = 100;
 void play(int bet){
     // char C[3] = {'J', 'Q', 'K'};
-    char *C = (char*)malloc(3*sizeof(char));
+    char *C = (char *)malloc(3 * sizeof(char));
     C[0] = 'J';
     C[1] = 'Q';
     C[2] = 'K';
@@ -18,7 +18,7 @@ void play(int bet){
         C[y] = temp;
     }
     int playerguess;
-    printf("Whta's the position of Queen 1, 2 or 3");
+    printf("What's the position of Queen 1, 2 or 3");
     scanf("%d", &playerguess);
     if(C[playerguess-1] == 'Q'){
         cash += 3*bet;
@@ -28,6 +28,7 @@ void play(int bet){
         cash -= bet;
         printf("You loose! Result = %c %c %c, Total cash = %d \n", C[0], C[1], C[2], cash);
     }
+    free(C);
 }
 void  main(){
     int bet;
