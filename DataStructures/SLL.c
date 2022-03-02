@@ -27,6 +27,4 @@ int main(){
         scanf("%d", data);
         insert(data);
     }
-
 }
-
