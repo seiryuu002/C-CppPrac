@@ -14,11 +14,11 @@ void insert(struct Node** head, int data){                      // #method1: voi
                                                                 //#method1: <remove this line>        //#method2: return head;
 }
 
-void print(struct Node *head){
-    printf("The list is: ");
-    while(head != NULL){
-        printf("%d -> ", head->data);
-        head = head -> next;
+void print(struct Node *head){                                  // #method1: void print(){
+    printf("The list is: ");                                    // #method1: struct node* temp = (struct node*)malloc(sizeof(struct node*));
+    while(head != NULL){                                        // #method1: while(temp != NULL){
+        printf("%d -> ", head->data);                           // #method1: printf(" %d ->", temp->data);
+        head = head->next;                                      // #method1: temp = temp->next;
     }
 }
 
