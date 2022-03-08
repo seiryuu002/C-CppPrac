@@ -7,7 +7,7 @@ struct node{
 };
 struct node* head;
 
-void insert_end(int data){
+void insert_beg(int data){
     struct node* temp = (struct node*)malloc(sizeof(struct node*));
     temp->data = data;
     temp->next = head;
@@ -34,7 +34,7 @@ void main(){
     for(i = 0; i<n ; i++){
         printf("Enter the data for node %d: ", i+1);
         scanf("%d",&data);
-        insert_end(data);
+        insert_beg(data);
     }
     print();
 }
