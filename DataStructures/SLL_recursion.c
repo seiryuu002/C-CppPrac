@@ -28,12 +28,18 @@ struct node* insert(struct node* head, int data)
     return head;
 }
 void print(struct node* head){
-    if(head == NULL) return;
+    if(head == NULL) 
+        return;
     printf("%d -> ", head->data);
     print(head->next);
 }
 
-void reverse_print(struct node* head);
+void reverse_print(struct node* head){
+    if (head == NULL)
+        return;
+    reverse_print(head->next);
+    printf("%d -> ", head->data);
+}
 void main()
 {
     struct node *head;
@@ -44,4 +50,5 @@ void main()
     head = insert(head, 6);
     head = insert(head, 8);
     print(head);
+    reverse_print(head);
 }
