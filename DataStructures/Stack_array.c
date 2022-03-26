@@ -11,7 +11,6 @@ void push(int x){
 
     A[++top] = x;
 }
-
 void pop(){
     if(top == -1){
         printf("Error: No element to pop\n");
