@@ -14,12 +14,13 @@ int is_empty(){
 
 int is_full()
 {
-    if ((rear + 1)%n == front)
+    if ((rear+1)%n == front)
         return 1;
     return 0;
 }
 
 void enqueue(int data){
+    n++;
     if(is_full()){
         printf("Queue is Full !!!\n");
     }
@@ -33,7 +34,6 @@ void enqueue(int data){
             rear = (rear + 1)%n;
         }
         queue[rear] = data;
-        n++;
     }
 }
 
@@ -67,11 +67,11 @@ void print(){
     }
     else{
         printf("Queue: ");
-        for (int i = 0; i <= n; i++)
+        for (int i = front; i < n; i++)
         {
             printf("%d ", queue[i]);
         }
-    }
+    }printf("\n");
 }
 
 void main(){
@@ -80,5 +80,12 @@ void main(){
     enqueue(6);
     enqueue(8);
     enqueue(10);
+    print();
+    int fr = dequeue();
+    printf("dequeued: %d \n", fr);
+    print();
+    enqueue(2);
+    print();
+    printf("Front: %d \n", Front());
     print();
 }
