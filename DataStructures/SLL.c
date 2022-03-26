@@ -15,7 +15,7 @@ void insert(struct Node** head, int data){                      // #method1: voi
 }
 
 void print(struct Node *head){                                  // #method1: void print(){
-    printf("The list is: ");                                    // #method1: struct node* temp = (struct node*)malloc(sizeof(struct node*));
+    printf("The list is: ");                                    // #method1: struct node* temp = head;
     while(head != NULL){                                        // #method1: while(temp != NULL){
         printf("%d -> ", head->data);                           // #method1: printf(" %d ->", temp->data);
         head = head->next;                                      // #method1: temp = temp->next;
