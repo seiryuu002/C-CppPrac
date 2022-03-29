@@ -63,6 +63,13 @@ int find_max(struct bst *root)
     return root->data;
 }
 
+int find_height(struct bst* root){
+    if(root == NULL){
+        return -1;
+    }
+    return max(find_height(root->left), find_height(root->right)) +1;
+}
+
 int find_min_rec(struct bst *root)
 {
     if (root == NULL)
@@ -76,7 +83,7 @@ int find_min_rec(struct bst *root)
     return find_min_rec(root->left);
 }
 
-int find_min_rec(struct bst *root)
+int find_max_rec(struct bst *root)
 {
     if (root == NULL)
     {
