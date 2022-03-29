@@ -9,7 +9,7 @@ struct bst{
 };
 
 struct bst* get_new_node(int data){
-    struct bst* temp = (struct bst*)malloc(sizeof(struct bst*));
+    struct bst* temp = (struct bst*)malloc(sizeof(struct bst));
     temp->data = data;
     temp->left = NULL;
     temp->right = NULL;
@@ -17,8 +17,9 @@ struct bst* get_new_node(int data){
 }
 
 struct bst* insert(struct bst *root, int data)
-{
+{   
     if(root == NULL){
+        printf("insertion done\n");
         root = get_new_node(data);
     }
     else if(data <= root->data){
@@ -39,15 +40,15 @@ int search(struct bst* root, int data){
 
 void main(){
     struct bst *rootptr = NULL;
+    int num;
     rootptr = insert(rootptr, 15);
     rootptr = insert(rootptr, 10);
     rootptr = insert(rootptr, 20);
     rootptr = insert(rootptr, 25);
     rootptr = insert(rootptr, 8);
     rootptr = insert(rootptr, 12);
-    int num;
     printf("enter the number you want to search: ");
     scanf("%d",&num);
     if(search(rootptr, num) == 1) printf("Number Found");
-    else printf("Number Found");
+    else printf("Number not Found");
 }
