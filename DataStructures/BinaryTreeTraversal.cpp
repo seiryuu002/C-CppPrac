@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-
+#include <iostream>
+#include<queue>
+using namespace std;
 struct bst
 {
-    int data;
+    char data;
     struct bst *left;
     struct bst *right;
 };
@@ -35,7 +35,25 @@ struct bst *insert(struct bst *root, int data)
     return root;
 }
 
-void main()
+
+void level_order(struct bst* root){
+    if(root == NULL){
+        return;
+    }
+    queue<bst*> Q;
+    Q.push(root);
+    while(!Q.empty()){
+        bst* current = Q.front();
+        cout<<current->data<<" ";
+        if(current->left != NULL) 
+            Q.push(current->left);
+        if (current->left != NULL)
+            Q.push(current->left);
+        Q.pop();
+    }
+}
+
+int main()
 {
     struct bst *rootptr = NULL;
     int num;
@@ -46,5 +64,6 @@ void main()
     rootptr = insert(rootptr, 20);
     rootptr = insert(rootptr, 17);
     rootptr = insert(rootptr, 25);
-
+    level_order(rootptr);
+    return 0;
 }
