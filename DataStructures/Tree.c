@@ -38,15 +38,68 @@ int search(struct bst* root, int data){
     else return search(root->right, data);
 }
 
+int find_min(struct bst* root){
+    if(root == NULL){
+        printf("Error: Tree is Empty");
+        return -1;
+    }
+    while(root->left !=NULL){
+        root = root->left;
+    }
+    return root->data;
+}
+
+int find_max(struct bst *root)
+{
+    if (root == NULL)
+    {
+        printf("Error: Tree is Empty");
+        return -1;
+    }
+    while (root->right != NULL)
+    {
+        root = root->right;
+    }
+    return root->data;
+}
+
+int find_min_rec(struct bst *root)
+{
+    if (root == NULL)
+    {
+        printf("Error: Tree is Empty");
+        return -1;
+    }
+    if(root->left == NULL){
+        return root->data;
+    }
+    return find_min_rec(root->left);
+}
+
+int find_min_rec(struct bst *root)
+{
+    if (root == NULL)
+    {
+        printf("Error: Tree is Empty");
+        return -1;
+    }
+    if (root->right == NULL)
+    {
+        return root->data;
+    }
+    return find_min_rec(root->right);
+}
+
 void main(){
     struct bst *rootptr = NULL;
     int num;
     rootptr = insert(rootptr, 15);
     rootptr = insert(rootptr, 10);
-    rootptr = insert(rootptr, 20);
-    rootptr = insert(rootptr, 25);
     rootptr = insert(rootptr, 8);
     rootptr = insert(rootptr, 12);
+    rootptr = insert(rootptr, 20);
+    rootptr = insert(rootptr, 17);
+    rootptr = insert(rootptr, 25);
     printf("enter the number you want to search: ");
     scanf("%d",&num);
     if(search(rootptr, num) == 1) printf("Number Found");
