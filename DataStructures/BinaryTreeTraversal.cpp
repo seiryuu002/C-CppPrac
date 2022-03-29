@@ -1,69 +1,67 @@
+/* Binary tree - Level Order Traversal */
 #include <iostream>
-#include<queue>
+#include <queue>
 using namespace std;
-struct bst
+
+struct Node
 {
     char data;
-    struct bst *left;
-    struct bst *right;
+    Node *left;
+    Node *right;
 };
 
-struct bst *get_new_node(int data)
+// Function to print Nodes in a binary tree in Level order
+void LevelOrder(Node *root)
 {
-    struct bst *temp = (struct bst *)malloc(sizeof(struct bst));
-    temp->data = data;
-    temp->left = NULL;
-    temp->right = NULL;
-    return temp;
+    if (root == NULL)
+        return;
+    queue<Node *> Q;
+    Q.push(root);
+    // while there is at least one discovered node
+    while (!Q.empty())
+    {
+        Node *current = Q.front();
+        Q.pop(); // removing the element at front
+        cout << current->data << " ";
+        if (current->left != NULL)
+            Q.push(current->left);
+        if (current->right != NULL)
+            Q.push(current->right);
+    }
 }
-
-struct bst *insert(struct bst *root, int data)
+// Function to Insert Node in a Binary Search Tree
+Node *Insert(Node *root, char data)
 {
     if (root == NULL)
     {
-        printf("insertion done\n");
-        root = get_new_node(data);
+        root = new Node();
+        root->data = data;
+        root->left = root->right = NULL;
     }
     else if (data <= root->data)
-    {
-        root->left = insert(root->left, data);
-    }
+        root->left = Insert(root->left, data);
     else
-    {
-        root->right = insert(root->right, data);
-    }
+        root->right = Insert(root->right, data);
     return root;
-}
-
-
-void level_order(struct bst* root){
-    if(root == NULL){
-        return;
-    }
-    queue<bst*> Q;
-    Q.push(root);
-    while(!Q.empty()){
-        bst* current = Q.front();
-        cout<<current->data<<" ";
-        if(current->left != NULL) 
-            Q.push(current->left);
-        if (current->left != NULL)
-            Q.push(current->left);
-        Q.pop();
-    }
 }
 
 int main()
 {
-    struct bst *rootptr = NULL;
-    int num;
-    rootptr = insert(rootptr, 15);
-    rootptr = insert(rootptr, 10);
-    rootptr = insert(rootptr, 8);
-    rootptr = insert(rootptr, 12);
-    rootptr = insert(rootptr, 20);
-    rootptr = insert(rootptr, 17);
-    rootptr = insert(rootptr, 25);
-    level_order(rootptr);
-    return 0;
+    /*Code To Test the logic
+      Creating an example tree
+                M
+               / \
+              B   Q
+             / \   \
+            A   C   Z
+    */
+    Node *root = NULL;
+    root = Insert(root, 'M');
+    root = Insert(root, 'B');
+    root = Insert(root, 'Q');
+    root = Insert(root, 'Z');
+    root = Insert(root, 'A');
+    root = Insert(root, 'C');
+    // Print Nodes in Level Order.
+    LevelOrder(root);
 }
