@@ -34,3 +34,6 @@ int main(){
         print(head);                                             //#method1: print();                //#method2: print(head);
     }
 }
+
+//int *p = (int*)malloc(sizeof(int));     // new             
+             

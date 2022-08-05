@@ -1,5 +1,5 @@
 // CPP code to suggest strong password
-#include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
