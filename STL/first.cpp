@@ -15,3 +15,16 @@
     ex. -> binary_search, find, reverse, sort, etc.
 
 */
+
+// Arrays in STL 
+
+#include<iostream>
+#include<array>
+using namespace std;
+
+int main(){
+    array<int, 10> arr = {1, 2, 3, 4};
+    int size = arr.size();
+    cout<<size<<endl;
+    return 0;
+}
