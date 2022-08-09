@@ -16,7 +16,7 @@
 
 */
 
-// Arrays in STL 
+/* Arrays in STL 
 
 #include<iostream>
 #include<array>
@@ -24,7 +24,25 @@ using namespace std;
 
 int main(){
     array<int, 10> arr = {1, 2, 3, 4};
-    int size = arr.size();
-    cout<<size<<endl;
+    int size = arr.size();              // to return size of the array
+    for(int i=0; i<size; i++){
+        cout<<arr[i]<<endl;
+    }
+
+    cout<<"Element at index 2 is "<<arr.at(2)<<endl;
+    cout<<"Check if array is empty or not :"<<arr.empty()<<endl;
+    cout<<"front: "<<arr.front()<<endl;
+    cout<<"Back: " << arr.back()<<endl;
     return 0;
+}
+*/
+
+/*
+Vector in STL*/
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    
 }
