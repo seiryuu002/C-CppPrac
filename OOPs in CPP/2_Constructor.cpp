@@ -25,7 +25,7 @@ class Student{
     Student(){                                    // Default Constructor
         cout<<"Default constructor invoked"<<endl;
     }
-    Student(int id, string name){ 
+    Student(int id, string name){                 // Parameterized Constructor
         Id = id;
         Name = name;
     }
