@@ -1,20 +1,21 @@
 /**************************************************************************
  *                             CONSTRUCTORS in OOPs
- * In C++, constructor is a special method which is invoked automatically 
- * at  the  time  of  object  creation. It is used to initialize the data 
- * members  of  new object generally. The constructor in C++ has the same 
+ * In C++, constructor is a special method which is invoked automatically
+ * at  the  time  of  object  creation. It is used to initialize the data
+ * members  of  new object generally. The constructor in C++ has the same
  * name as class or structure.
- * 
+ *
  * There are three types 1.Default, 2.Parameterized, 3.Copy
  * 1.Default:       A constructor which has no argument is known as default
  *                  constructor.  It  is  invoked  at  the time of creating
  *                  object.
  *
- * 2.Parameterized: A  constructor  which  has  parameters is called
+ * 2.Parameterized: A  constructor  which  has  parameters is called 
  *                  parameterized constructor. It is used to provide
  *                  different values to distinct objects.
- * 
- * 3.Copy:          
+ *
+ * 3.Copy:          A copy constructor is a member function that initializes
+ *                  an object using another object of the same class.
  **************************************************************************/
 #include<iostream>
 #include<string>
@@ -24,14 +25,17 @@ class Student{
     public: 
     int a;
     int b;
-    Student(){                                    // Default Constructor
+    Student(){                                      // Default Constructor
         cout<<"Default constructor invoked"<<endl;
         a = 10;
         b = 20;
     }
-    Student(int n1,int n2){                 // Parameterized Constructor
+    Student(int n1,int n2){                         // Parameterized Constructor
         a = n1;
         b = n2;
+    }
+    Student(const Student &t){                      //Copy Constructor.
+        a = t.a;
     }
 };
 
