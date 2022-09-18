@@ -56,7 +56,7 @@ String::String(const String &old_str)
     strcpy(s, old_str.s);
 }
 
-int main()
+int shallowCopy()
 {
     String str1("GeeksQuiz");
     String str2 = str1;
@@ -70,6 +70,24 @@ int main()
     str2.print();
     return 0;
 }
+
+
+int deepCopy()
+{
+    String str1("GeeksQuiz");
+    String str2 = str1;
+
+    str1.print(); // what is printed ?
+    str2.print();
+
+    str2.change("GeeksforGeeks");
+
+    str1.print(); // what is printed now ?
+    str2.print();
+    return 0;
+}
+
+
 void copyElision(){
 
     for(int i = 0; i <= 2; i++ ){   // This can print maybe 1,2 or 3
@@ -78,6 +96,7 @@ void copyElision(){
         cout<<endl;                 // performs RVO (Return Value Optimization)
     }
 }
+
 
 int main(){
     shallowCopy();
