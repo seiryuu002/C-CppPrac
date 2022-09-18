@@ -15,10 +15,11 @@ class Sample{
 };
 
 void copyElision(){
-    Sample S;
-    for(int i = 0; i <= 2; i++ ){
-        S.display();
-        cout<<endl;
+
+    for(int i = 0; i <= 2; i++ ){   // This can print maybe 1,2 or 3
+        Sample S;
+        S.display();                // times depending on whether compiler
+        cout<<endl;                 // performs RVO (Return Value Optimization)
     }
 }
 
