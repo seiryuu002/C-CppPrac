@@ -30,7 +30,6 @@ class Example{
         return x;
     }
     int setX(int x){
-        delete x;
         x = this->x;
     }
 };
