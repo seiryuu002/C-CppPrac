@@ -3,10 +3,11 @@
  *                            VIRTUAL DESTRUCTOR 
  * 
  *************************************************************************/
-
-
-
-
+/*************************************************************************
+* Deleting a derived class object using a pointer of base class type that
+* has a non-virtual destructor results in undefined behavior. To correct 
+* this situation, the base class should be defined with a virtual destructor.
+**************************************************************************/
 #include <iostream>
 
 using namespace std;
@@ -18,7 +19,11 @@ public:
     {
         cout << "Constructing base\n";
     }
-    ~base()
+    // ~base()                              // results in undefined behaviour
+    // {
+    //     cout << "Destructing base\n";
+    // }
+    virtual ~base()                         // virtual destructor
     {
         cout << "Destructing base\n";
     }
@@ -31,7 +36,12 @@ public:
     {
         cout << "Constructing derived\n";
     }
-    ~derived()
+    // ~derived()                          
+    // {
+    //     cout << "Destructing derived\n";
+    // }
+    
+    virtual ~derived()                     // Virtual Destructor
     {
         cout << "Destructing derived\n";
     }
@@ -40,8 +50,8 @@ public:
 int main()
 {
     derived *d = new derived();
-    //base *b = d;
-    //delete b;
-    //getchar();
+    base *b = d;
+    delete b;
+    getchar();
     return 0;
 }
