@@ -60,8 +60,8 @@ public:
     }
     void display()
     {
-        cout << endl
-             << "ID=" << id;
+        cout << endl;
+        cout << "ID=" << id;
     }
 };
 
