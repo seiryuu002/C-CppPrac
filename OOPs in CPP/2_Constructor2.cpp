@@ -14,16 +14,18 @@ class Sample{
         cout<<"hello Dear!";        
     }
 };
-class String
+
+
+class StringC
 {
 private:
     char *s;
     int size;
 
 public:
-    String(const char *str = NULL); // constructor
-    ~String() { delete[] s; }       // destructor
-    String(const String &);         // copy constructor
+    StringC(const char *str = NULL); // constructor
+    ~StringC() { delete[] s; }       // destructor
+    StringC(const StringC &);         // copy constructor
     void print()
     {
         cout << s << endl;
@@ -34,14 +36,14 @@ public:
 // In this the pointer returns the CHAR ARRAY
 // in the same sequence of string object but
 // with an additional null pointer '\0'
-String::String(const char *str)
+StringC::StringC(const char *str)
 {
     size = strlen(str);
     s = new char[size + 1];
     strcpy(s, str);
 }
 
-void String::change(const char *str)
+void StringC::change(const char *str)
 {
     delete[] s;
     size = strlen(str);
@@ -49,7 +51,7 @@ void String::change(const char *str)
     strcpy(s, str);
 }
 
-String::String(const String &old_str)
+StringC::StringC(const String &old_str)
 {
     size = old_str.size;
     s = new char[size + 1];
@@ -58,8 +60,8 @@ String::String(const String &old_str)
 
 int shallowCopy()
 {
-    String str1("GeeksQuiz");
-    String str2 = str1;
+    StringC str1("GeeksQuiz");
+    StringC str2 = str1;
 
     str1.print(); // what is printed ?
     str2.print();
