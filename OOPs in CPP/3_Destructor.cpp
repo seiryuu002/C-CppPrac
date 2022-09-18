@@ -21,11 +21,35 @@ class Example{
     Example(){
         cout<<"Constructor invoked"<<endl;
     }
-    ~Example(){
+    private:
+    ~Example(){                             // Private destructor
         cout<<"Destructor invoked"<<endl;
     }
+    public:
+    friend void destructExample(Example* ptr);
 };
+
+void destructExample( Example* ptr){
+    delete ptr;
+}
+
+
 int main(){
-    Example x;
-    return 0;
+    // Example x;               // local variable 'x' can't be destructed because
+                                // destructor is private.
+    Example* e;                 // works fine because there is no object being 
+                                // constructed, just a pointer of type 'Example*'
+                                // so nothing is destroyed.
+    Example* E = new Example;   // This works too because of DMA(dynamic memory allocation),
+                                // it is programmer's responsibility to delete it.  
+    // delete E;                // when we call delete destructor is called but,
+                                // destructor is private that's why compilation error.
+    destructExample(E);         // this is a way to create classes with private 
+                                // destructors and have a function as a friend of the
+                                // class. the function can only delete the objects.    
+    
+    
+    
+    
+    return 0;         
 }
