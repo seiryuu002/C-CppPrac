@@ -46,10 +46,6 @@ int main(){
                                 // destructor is private that's why compilation error.
     destructExample(E);         // this is a way to create classes with private 
                                 // destructors and have a function as a friend of the
-                                // class. the function can only delete the objects.    
-    
-    
-    
-    
+                                // class. the function can only delete the objects.
     return 0;         
 }
