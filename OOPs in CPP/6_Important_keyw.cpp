@@ -39,8 +39,22 @@ class Example{
     static int i;
     Example(){};
 };
+class A{
+    int i = 0;
+    public:
+        A()
+        {
+            i = 0;
+            cout<<"Inside Constructor\n";
+        }
+        ~A()
+        {
+            cout<<"Inside Destructor\n";
+        }
+};
 
 int Example::i = 1;
+
 int main(){
     for(int i = 0; i<5; i++){
         demo();
@@ -54,5 +68,14 @@ int main(){
       outside the class as shown below:
     */
     cout<<e1.i<<endl;
+    /*Class objects as static: Just like variables, objects also when declared 
+      as static have a scope till the lifetime of program.Consider the below 
+      program where the object is non-static.*/
+    int x = 0;
+    if(x == 0){
+        //A a;            // Non-static - scope of object is just inside the if block.
+        static A a;               
+    }
+    cout<<"End of main\n";
     return 0;
 }
