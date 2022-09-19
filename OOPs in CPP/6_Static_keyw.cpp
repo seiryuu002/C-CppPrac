@@ -53,7 +53,7 @@ class A{
         }
         static void fun()
         {
-            cout<<"static function invoked";
+            cout<<"static function invoked\n";
         }
 };
 
@@ -94,7 +94,7 @@ int main(){
     functions are allowed to access only the static data members or other static
     member functions, they can not access the non-static data members or member
     functions of the class.*/
-
+    A::fun();
     cout<<"End of main\n";
     return 0;
 }
