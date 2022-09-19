@@ -30,6 +30,6 @@ int main(){
     Cube c;
     cout<<c.getVolume()<<endl;  // calling simple function.
     cout<<Cube::getVol()<<endl; //calling static function.
-    cout<<c.getV()<<endl;       //calling const function
+    cout<<c.getV(5)<<endl;       //calling const function
     return 0;
 }
