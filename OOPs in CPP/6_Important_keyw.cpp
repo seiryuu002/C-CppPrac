@@ -40,12 +40,12 @@ class Example{
     Example(){};
 };
 
-
+int Example::i = 1;
 int main(){
     for(int i = 0; i<5; i++){
         demo();
     }
-    // Example e1;
+    Example e1;
     // Example e2;
     /*You can see in the above program that we have tried to create multiple 
       copies of the static variable i for multiple objects. But this didn’t 
@@ -53,6 +53,6 @@ int main(){
       explicitly by the user using the class name and scope resolution operator 
       outside the class as shown below:
     */
-    
+    cout<<e1.i<<endl;
     return 0;
 }
