@@ -11,6 +11,48 @@
 #include<iostream>
 using namespace std;
 
-int main(void){
+void demo(){
+    /* 
+    when a variable is declared as static, space for it gets allocated 
+    for the lifetime of program.Even if the function is called multiple 
+    times, space for the static variable is allocated only once and the 
+    value of variable in the previous call gets carried through the next 
+    function call. This is useful for implementing coroutines in C/C++ 
+    or any other application where previous state of function needs to 
+    be stored.*/
+    
+    static int count = 0;         //static variable in a function
+    cout<<count<<" "<<endl;
+    count++;
+
+}
+    /*
+    Static variables in a class: As the variables declared as static are 
+    initialized only once as they are allocated space in separate static 
+    storage so, the static variables in a class are shared by the objects. 
+    There can not be multiple copies of same static variables for different 
+    objects. Also because of this reason static variables can not be 
+    initialized using constructors.*/
+
+class Example{
+    public:
+    static int i;
+    Example(){};
+};
+
+
+int main(){
+    for(int i = 0; i<5; i++){
+        demo();
+    }
+    // Example e1;
+    // Example e2;
+    /*You can see in the above program that we have tried to create multiple 
+      copies of the static variable i for multiple objects. But this didn’t 
+      happen. So, a static variable inside a class should be initialized 
+      explicitly by the user using the class name and scope resolution operator 
+      outside the class as shown below:
+    */
+    
     return 0;
 }
