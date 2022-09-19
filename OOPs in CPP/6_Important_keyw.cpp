@@ -51,6 +51,10 @@ class A{
         {
             cout<<"Inside Destructor\n";
         }
+        static void fun()
+        {
+            cout<<"static function invoked";
+        }
 };
 
 int Example::i = 1;
@@ -74,8 +78,23 @@ int main(){
     int x = 0;
     if(x == 0){
         //A a;            // Non-static - scope of object is just inside the if block.
+        /*Output for above will be:
+          Inside Constructor  
+          Inside Destructor
+          End of main
+        */
         static A a;               
     }
+    /*
+    Static functions in a class: Just like the static data members or static 
+    variables inside the class, static member functions also does not depend 
+    on object of class. We are allowed to invoke a static member function using 
+    the object and the ‘.’ operator but it is recommended to invoke the static 
+    members using the class name and the scope resolution operator. Static member
+    functions are allowed to access only the static data members or other static
+    member functions, they can not access the non-static data members or member
+    functions of the class.*/
+
     cout<<"End of main\n";
     return 0;
 }
