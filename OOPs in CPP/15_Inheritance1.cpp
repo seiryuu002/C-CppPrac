@@ -37,8 +37,15 @@ class Base{
     int c;
 };
 
-
-
+class Child1 : private Base
+{
+};
+class Child2 : protected Base
+{
+};
+class Child3 : public Base
+{
+};
 
 int main(){
     Child c;
