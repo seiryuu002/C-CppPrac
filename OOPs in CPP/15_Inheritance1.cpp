@@ -28,6 +28,17 @@ class Child : public Parent{
         int y;
 };
 
+class Base{
+    private:
+    int a;
+    protected:
+    int b;
+    public:
+    int c;
+};
+
+
+
 
 int main(){
     Child c;
