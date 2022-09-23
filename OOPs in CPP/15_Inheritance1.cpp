@@ -19,5 +19,19 @@
 using namespace std;
 
 class Parent{
-
+    public:
+        int x;    
 };
+
+class Child : public Parent{
+    public:
+        int y;
+};
+
+
+int main(){
+    Child c;
+    c.x = 10;
+    c.y = 90;
+    cout<<c.x<<"\t"<<c.y<<endl; 
+}
