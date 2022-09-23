@@ -30,26 +30,49 @@ class Child : public Parent{
 
 class Base{
     private:
-    int a;
+    int a = 10;
     protected:
-    int b;
+    int b = 20;
     public:
-    int c;
+    int c = 30;
 };
 
+
+/***********************************************************************
+ * Modes of Inheritance
+ ***********************************************************************/
 class Child1 : private Base
-{
+{ // b is private
+  // c is private
+  // a is inaccessible Child1
 };
 class Child2 : protected Base
-{
+{ // b is protected
+  // c is protected
+  // a is inaccessible Child2
 };
 class Child3 : public Base
-{
+{ // b is protected
+  // c is public
+  // a is inaccessible Child3
 };
 
 int main(){
     Child c;
+    Child1 c1;
+    Child2 c2;
+    Child3 c3;
     c.x = 10;
     c.y = 90;
-    cout<<c.x<<"\t"<<c.y<<endl; 
+    cout<<c.x<<"\t"<<c.y<<endl;
+    cout << c1.a;
+    cout << c1.b;
+    cout << c1.c;
+    cout << c2.a;
+    cout << c2.b;
+    cout << c2.c;
+    cout << c3.a;
+    cout << c3.b;
+    cout << c3.c;
+    return 0;
 }
