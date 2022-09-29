@@ -50,31 +50,37 @@ class Poly{
 
 */
 
-class Operator{
+class Complex{
     private:
         int real;
         int image;
     
     public:
-        Operator(int r = 0, int i = 0){
+        Complex(int r = 0, int i = 0){
             real = r;
             image = i;
         }
 
-        Operator operator+(Operator const& obj){
-            Operator o;
+        Complex operator+(Complex const& obj){
+            Complex o;
             o.real = real + obj.image;
             o.image = image + obj.image;
             return o;
         }
 
+        void print(){
+            cout<<real<<" + i"<<image<<endl;
+        }
 };
 
 
 int main(){
     Poly p;
+    Complex C1(10, 5), C2(2, 4);
     p.func(1);              // Function Overloading
     p.func(1.7326);
     p.func(10, 5);
+    Complex C3 = C1 + C2;
+    C3.print();
     return 0;
 }
