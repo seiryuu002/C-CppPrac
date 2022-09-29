@@ -40,6 +40,18 @@ class Poly{
     }
 };
 
+/* Operator Overloading - C++ has the ability to provide the operators 
+   with a special meaning for a data type, this ability is known as 
+   operator overloading. For example, we can make use of the addition 
+   operator (+) for string class to concatenate two strings. We know 
+   that the task of this operator is to add two operands. So a single 
+   operator ‘+’, when placed between integer operands, adds them and 
+   when placed between string operands, concatenates them.
+
+*/
+
+
+
 
 int main(){
     Poly p;
