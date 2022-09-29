@@ -50,7 +50,25 @@ class Poly{
 
 */
 
+class Operator{
+    private:
+        int real;
+        int image;
+    
+    public:
+        Operator(int r = 0, int i = 0){
+            real = r;
+            image = i;
+        }
 
+        Operator operator+(Operator const& obj){
+            Operator o;
+            o.real = real + obj.image;
+            o.image = image + obj.image;
+            return o;
+        }
+
+};
 
 
 int main(){
