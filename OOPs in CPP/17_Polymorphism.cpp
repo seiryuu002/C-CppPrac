@@ -1,4 +1,4 @@
-/**************************************************************************
+/*********************************************************************************
  * Polymorphism -> The word “polymorphism” means having many forms.
  * In simple words, we can define polymorphism as the ability of a message
  * to be displayed in more than one form. A real-life example of polymorphism
@@ -7,10 +7,11 @@
  * same person exhibits different behavior in different situations. This is
  * called polymorphism. Polymorphism is considered one of the important
  * features of Object-Oriented Programming.
- * 
+ *
  * Types of Polymorphism
  * * Compile-time Polymorphism.
  * * Runtime Polymorphism.
- * 
- * 
- **************************************************************************/
+ *
+ * Compile Time Polymorphism - This type of polymorphism is achieved by 
+ *                             function overloading or operator overloading.
+ *********************************************************************************/
