@@ -63,7 +63,7 @@ class Complex{
 
         Complex operator+(Complex const& obj){
             Complex o;
-            o.real = real + obj.image;
+            o.real = real + obj.real;
             o.image = image + obj.image;
             return o;
         }
